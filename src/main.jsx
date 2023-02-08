@@ -12,13 +12,14 @@ import { Memorize } from './06-memos/Memorize';
 import { MultipleCustomHook } from './03-examples/MultipleCustomHook';
 import { Padre } from './07-tarea-memo/Padre';
 import { SimpleForm } from './02-useEffect/SimpleForm';
+import { TodoApp } from './08-useReducer/TodoApp';
 
 import './index.css'
 
-import './08-useReducer/intro-reducer';
+// import './08-useReducer/intro-reducer';
 
-// ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
-    // <Padre />
+    <TodoApp />
   // </React.StrictMode>
-// )
+)
