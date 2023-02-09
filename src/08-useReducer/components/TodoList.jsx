@@ -1,8 +1,6 @@
 import { TodoItem } from "./TodoItem"
 
-export const TodoList = ({ todos = [], onDeleteTodo }) => {
-
-
+export const TodoList = ({ todos = [], onDeleteTodo, onToogleTodo }) => {
     return (
         <>
             <ul className='list-group'>
@@ -10,7 +8,8 @@ export const TodoList = ({ todos = [], onDeleteTodo }) => {
                     todos.map( todo => (
                         <TodoItem key={ todo.id } 
                                   todo={ todo }
-                                  onDeleteTodo={ onDeleteTodo } />
+                                  onDeleteTodo={ onDeleteTodo }
+                                  onToogleTodo={ onToogleTodo } />
                     ) )
                 } 
             </ul>
