@@ -21,7 +21,6 @@ export const TodoApp = () => {
         localStorage.setItem( 'todos', JSON.stringify(todos) );
     }, [ todos ])
     
-
     const handleNewTodo = ( todo ) => {
         const action = {
             type: '[TODO] Add Todo',
@@ -32,6 +31,13 @@ export const TodoApp = () => {
         dispatch( action );
     }
 
+    const handleDeleteTodo = ( id ) => {
+        dispatch({
+            type: '[TODO] Remove Todo',
+            payload: id
+        });
+    }
+
     return (
         <>
             <h1>TodoApp 10 | <small>Pendientes: 2</small> </h1>
@@ -39,14 +45,14 @@ export const TodoApp = () => {
 
             <div className='row'>
                 <div className='col-7'>
-                    <TodoList todos={ todos }/>
+                    <TodoList todos={ todos } onDeleteTodo={ handleDeleteTodo } />
                 </div>
 
                 <div className='col-5'>
                     <h4>Agregar Todo</h4>
                     <hr />
 
-                    <TodoAdd onNewTodo={ handleNewTodo }/>
+                    <TodoAdd onNewTodo={ handleNewTodo } />
                 </div>   
             </div>
         </>
